@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pururaj Dhariwal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="left fade">
+    <img 
+      src="https://drive.google.com/uc?export=view&id=1Rl2h3JctaNf4uFAeDU3CflZDulZfgl4C" 
+      alt="Pururaj Dhariwal" 
+      class="profile-img"
+    >
+    <h1>
+      Pururaj <br>
+      <span>Dhariwal</span>
+      <hr>
+    </h1>
+    
+    <ul class="intro-list">
+      <li>Front End Developer building scalable systems and elegant interfaces.</li>
+      <li>Passionate about blockchain and Frontend architecture.</li>
+      <li>Professional Shooter</li>
+    </ul>
+
+    <div class="socials">
+      <a href="https://github.com/pururaj23" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/pururaj-dhariwal-a954783b2" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.instagram.com/pururajdhariwal?igsi=OG43bDFqazN4OGw1" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="section fade">
+      <h2>Selected Work</h2>
+
+      <div class="project">
+        <h3>High Accuracy Model Trained</h3>
+        <p>Trained multiple machine learning models with high accuracy</p>
+      </div>
+
+      <div class="project">
+        <h3>Open Source Contributions</h3>
+        <p>Improved real-world repositories by fixing bugs, enhancing performance, and writing production-ready code.</p>
+      </div>
+      <div class="project">
+      <h3>Education</h3>
+      <p>B.TECH AIML 2nd year at Ajay Kumar Garg Enginnering College 
+        <br> 12 Standard with PCM from Shri Gulab Rai Montessori Sr Sec School </p>
+      </div>
+
+    <div class="section about fade">
+      <h2>About</h2>
+      <p>
+        I enjoy solving complex engineering problems while maintaining
+        simplicity in design. My work blends backend depth with
+        clean, modern frontend aesthetics.
+      </p>
+    </div>
+
+    <section id="contact" class="section fade">
+      <h2>Contact</h2>
+      <ul>
+        <li>
+          <strong>Email:</strong> 
+          <a href="mailto:pururaj.dhariwal@gmail.com">pururaj.dhariwal@gmail.com</a>
+        </li>
+        <li>
+          <strong>Phone:</strong> 
+          <a href="tel:+916395441772">+91 6395441772</a>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <script>
+    const elements = document.querySelectorAll('.fade');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+
+    elements.forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
