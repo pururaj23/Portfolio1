@@ -10,7 +10,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-b0ox;
+  box-sizing: border-box; /* Fixed typo from border-b0ox */
   font-family: 'Inter', sans-serif;
 }
 
@@ -21,7 +21,7 @@ body {
   position: relative;
 }
 
-/* This creates a perfectly sticky background layer behind all content */
+/* Sticky background layer */
 body::before {
   content: "";
   position: fixed;
@@ -30,18 +30,19 @@ body::before {
   width: 100vw;
   height: 100vh;
   background: var(--bg-gradient);
-  z-index: -1; /* Keeps the gradient behind your text and containers */
+  z-index: -1; 
 }
 
 .left {
   width: 42%;
-  height: 75vh;
+  height: 100vh; /* Changed to full height so nothing gets cut off */
   position: fixed;
-  padding: 80px 90px;
+  padding: 5vh 5vw; /* Fluid padding based on screen size */
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-right: 1px solid var(--border-light);
+  overflow-y: auto; /* CRITICAL: Allows scrolling on short laptop screens */
 }
 
 .title-hr {
@@ -49,12 +50,13 @@ body::before {
   background-color: #144819;
   border: none;
   margin: 15px 0;
-  width: 410px;
+  width: 100%; /* Fluid width */
+  max-width: 410px; /* Caps at original size */
 }
 
 .profile-img {
-  width: 210px;
-  height: 210px;
+  width: clamp(150px, 15vw, 210px); /* Shrinks dynamically on smaller laptops */
+  height: clamp(150px, 15vw, 210px);
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
@@ -64,7 +66,7 @@ body::before {
 }
 
 .left h1 {
-  font-size: 3.6rem;
+  font-size: clamp(2.5rem, 4vw, 3.6rem); /* Dynamically scales between 2.5rem and 3.6rem */
   font-weight: 900;
   line-height: 1.05;
   letter-spacing: -1.5px;
@@ -75,7 +77,7 @@ body::before {
 }
 
 .left p, .about p {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
   line-height: 1.7;
   color: var(--muted);
   max-width: 420px;
@@ -86,7 +88,7 @@ body::before {
   list-style: square inside;
   color: var(--muted);
   line-height: 1.7;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
   max-width: 420px;
 }
 
@@ -95,7 +97,7 @@ body::before {
 }
 
 .socials {
-  margin-top: 35px;
+  margin-top: clamp(20px, 4vh, 35px);
   display: flex;
   gap: 22px;
 }
@@ -116,11 +118,11 @@ body::before {
 .right {
   margin-left: 42%;
   width: 58%;
-  padding: 100px 120px;
+  padding: 8vh 6vw; /* Fluid padding prevents content squishing on small laptops */
 }
 
 .section {
-  margin-bottom: 100px;
+  margin-bottom: clamp(60px, 10vh, 100px);
 }
 
 .section h2 {
@@ -129,7 +131,7 @@ body::before {
   letter-spacing: 3px;
   text-transform: uppercase;
   color: #022556;
-  margin-bottom: 45px;
+  margin-bottom: clamp(30px, 5vh, 45px);
 }
 
 .project {
@@ -138,12 +140,12 @@ body::before {
   cursor: pointer;
   border: 1px solid var(--border-light);
   border-radius: 12px;
-  padding: 30px;
+  padding: clamp(20px, 3vw, 30px);
   background: rgba(255, 255, 255, 0.4); 
 }
 
 .project h3 {
-  font-size: 1.7rem;
+  font-size: clamp(1.4rem, 2vw, 1.7rem);
   font-weight: 700;
   letter-spacing: -0.5px;
   margin-bottom: 10px;
@@ -171,7 +173,7 @@ body::before {
   margin-bottom: 30px;
   border: 1px solid var(--border-light);
   border-radius: 12px;
-  padding: 30px;
+  padding: clamp(20px, 3vw, 30px);
   background: rgba(255, 255, 255, 0.4);
 }
 
@@ -188,7 +190,7 @@ body::before {
 .contact-form-container {
   border: 1px solid var(--border-light);
   border-radius: 12px;
-  padding: 30px;
+  padding: clamp(20px, 3vw, 30px);
   background: rgba(255, 255, 255, 0.4);
 }
 
@@ -261,8 +263,18 @@ body::before {
   transform: translateY(0);
 }
 
+/* Small Laptops & Large Tablets (1001px to 1300px) */
+@media(max-width: 1300px) {
+  .left {
+    padding: 5vh 3vw;
+  }
+  .right {
+    padding: 6vh 4vw;
+  }
+}
+
 /* Mobile Responsiveness */
-@media(max-width:1000px) {
+@media(max-width: 1000px) {
   body {
     flex-direction: column;
   }
@@ -271,14 +283,15 @@ body::before {
     position: relative;
     width: 100%;
     height: auto;
-    padding: 80px 40px;
+    padding: 60px 30px;
     border-right: none;
     border-bottom: 1px solid var(--border-light);
+    overflow-y: visible; /* Reset scroll for mobile */
   }
 
   .right {
     margin-left: 0;
     width: 100%;
-    padding: 60px 40px;
+    padding: 60px 30px;
   }
 }
