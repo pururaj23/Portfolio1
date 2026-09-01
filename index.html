@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pururaj Dhariwal</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <div class="left fade">
-    <img 
-      src="https://drive.google.com/uc?export=view&id=1Rl2h3JctaNf4uFAeDU3CflZDulZfgl4C" 
-      alt="Pururaj Dhariwal" 
-      class="profile-img"
-    >
+    <img src="image.jpeg" alt="Pururaj Dhariwal"
+      class="profile-img">
+    
     <h1>
       Pururaj <br>
       <span>Dhariwal</span>
-      <hr>
     </h1>
+    <hr class="title-hr">
     
+    <div class="about">
+      <p>
+        I enjoy solving complex engineering problems while maintaining
+        simplicity in design. My work blends backend depth with
+        clean, modern frontend aesthetics.
+      </p>
+    </div>
+
     <ul class="intro-list">
       <li>Front End Developer building scalable systems and elegant interfaces.</li>
       <li>Passionate about blockchain and Frontend architecture.</li>
@@ -27,9 +41,15 @@
     </ul>
 
     <div class="socials">
-      <a href="https://github.com/pururaj23" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/pururaj-dhariwal-a954783b2" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://www.instagram.com/pururajdhariwal?igsi=OG43bDFqazN4OGw1" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://github.com/pururaj23" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/pururaj-dhariwal-a954783b2" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+      <a href="https://www.instagram.com/pururajdhariwal?igsi=OG43bDFqazN4OGw1" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
     </div>
   </div>
 
@@ -46,33 +66,69 @@
         <h3>Open Source Contributions</h3>
         <p>Improved real-world repositories by fixing bugs, enhancing performance, and writing production-ready code.</p>
       </div>
+
       <div class="project">
-      <h3>Education</h3>
-      <p>B.TECH AIML 2nd year at Ajay Kumar Garg Enginnering College 
-        <br> 12 Standard with PCM from Shri Gulab Rai Montessori Sr Sec School </p>
+        <h3>Skills</h3>
+        <ul class="intro-list">
+          <li>HTML and CSS</li>
+          <li>Python and C</li>
+          <li>JavaScript</li>
+        </ul>
       </div>
 
-    <div class="section about fade">
-      <h2>About</h2>
-      <p>
-        I enjoy solving complex engineering problems while maintaining
-        simplicity in design. My work blends backend depth with
-        clean, modern frontend aesthetics.
-      </p>
+      <div class="project">
+        <h3>Projects</h3>
+        <ul class="intro-list">
+          <li>Mobile Payment System</li>
+          <li>Object Identifier</li>
+          <li>Data Analyser</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <h3>Education</h3>
+        <p>
+          B.TECH AIML 2nd year at Ajay Kumar Garg Engineering College <br> 
+          12th Standard with PCM from Shri Gulab Rai Montessori Sr Sec School
+        </p>
+      </div>
     </div>
 
     <section id="contact" class="section fade">
       <h2>Contact</h2>
-      <ul>
+      
+      <ul class="contact-list">
         <li>
-          <strong>Email:</strong> 
+          <strong>Email:</strong>
           <a href="mailto:pururaj.dhariwal@gmail.com">pururaj.dhariwal@gmail.com</a>
         </li>
         <li>
-          <strong>Phone:</strong> 
+          <strong>Phone:</strong>
           <a href="tel:+916395441772">+91 6395441772</a>
         </li>
       </ul>
+
+      <div class="contact-form-container">
+        <h3>Send me a message</h3>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="How can I help you?" required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
     </section>
   </div>
 
@@ -86,10 +142,11 @@
         }
       });
     }, {
-      threshold: 0.3
+      threshold: 0.2 
     });
 
     elements.forEach((el) => observer.observe(el));
   </script>
 </body>
+
 </html>
